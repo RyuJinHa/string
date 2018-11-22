@@ -8,11 +8,8 @@ int main(int argc, char *argv[]) {
 	FILE *fp;
 	char input;
 
-	
-
-	
 	 
-	fp=fopen("C:\sample.txt", "r");
+	fp=fopen("sample.txt", "r");
 	
 	while((input=fgetc(fp))!=EOF)
 	{
@@ -24,7 +21,6 @@ int main(int argc, char *argv[]) {
 	printf(input);
 	}
 	*/
-	
 
 	fclose(fp);
 
