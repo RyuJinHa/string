@@ -5,26 +5,34 @@
 
 int main(int argc, char *argv[]) {
 	
-	FILE *fp;
+	FILE *fp1;
+	FILE *fp2;
 	char input;
-
+	char original[100];
+	char copy[100];
+	int i=0;
 	 
-	fp=fopen("sample.txt", "r");
+	 
+	printf("original file: ");
+	scanf("%s",original);
+	printf("copy file: ");
+	scanf("%s", copy);
 	
-	while((input=fgetc(fp))!=EOF)
-	{
-		putchar(input);
-	}
-	/*
-	while (fgets(input,100,fp)!=NULL)
-	{
-	printf(input);
-	}
-	*/
-
-	fclose(fp);
-
+	fp1=fopen(original, "r");
+	fp2=fopen(copy,"w");
 	
+	while((input=fgetc(fp1))!=EOF)
+	{
+		fputc(input,fp2);
+		i++;
+		
+	}
+	printf("copy succeed(%i Bytes copied)\n",i);
+
+	fclose(fp1);
+	fclose(fp2);
+	
+
 
 	return 0;
 }
